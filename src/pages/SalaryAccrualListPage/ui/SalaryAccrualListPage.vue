@@ -42,7 +42,7 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { onBeforeMount, ref } from 'vue';
 import getData from 'src/app/api/getData';
 import { MainTable } from 'src/entities/MainTable/index';
