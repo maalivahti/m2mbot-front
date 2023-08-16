@@ -1,0 +1,100 @@
+@include font-face('SFPro', 'SFProDisplay-Regular', 400);
+@include font-face('SFPro', 'SFProDisplay-Medium', 500);
+@include font-face('SFPro', 'SFProDisplay-Bold', 700);
+
+html {
+  box-sizing: border-box;
+  font-family: "SFPro", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: 0;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.invisible {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1260px;
+}
+
+.site-wrapper {
+  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+}

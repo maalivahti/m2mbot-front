@@ -1,0 +1,245 @@
+import { date } from 'quasar';
+
+const companyTableHead = [
+  {
+    name: 'companyName',
+    label: 'Компания',
+    field: 'company_name',
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 14%',
+  },
+  {
+    name: 'status',
+    label: 'Статус',
+    field: 'status_smt',
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'onecCode',
+    label: 'Код в 1С',
+    field: 'one_c_code',
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'mainManager',
+    label: 'Основной менеджер',
+    field: 'm_manager',
+    format: (val) => (val ? `${val}` : 'Не указан'),
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 9%',
+  },
+  {
+    name: 'servicesManager',
+    label: 'Сервисный менеджер',
+    field: 's_manager',
+    format: (val) => (val ? `${val}` : 'Не указан'),
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 9%',
+  },
+  {
+    name: 'techSupportStaff',
+    label: 'Сотрудник тех.пода',
+    field: 'techsup',
+    format: (val) => (val ? `${val}` : 'Не указан'),
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 9%',
+  },
+  {
+    name: 'bitrixID',
+    label: 'BitrixID',
+    field: 'bitrix_id',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'accessTravels',
+    label: 'Доступ к ПЛ',
+    field: 'travel_acc',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'accessFuelTrans',
+    label: 'Доступ к Транзакциям',
+    field: 'trans_acc',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'accessDiagnostic',
+    label: 'Доступ к Диагностике',
+    field: 'diagn_acc',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'accessFuelDown',
+    label: 'Доступ к Сливам',
+    field: 'fd_acc',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'checkFuelDown',
+    label: 'Проверять сливы',
+    field: 'check_fd',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'token',
+    label: 'Token Wialon',
+    field: 'company_token',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 4%',
+  },
+  {
+    name: 'session',
+    label: 'Сессия',
+    field: 'wialon_session',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 5%',
+  },
+  {
+    name: 'location',
+    label: 'Регион',
+    field: 'location',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 9%',
+  },
+  {
+    name: 'story',
+    label: 'История',
+    field: 'story',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 5%',
+  },
+];
+
+const slotsList = ['header-cell-bitrixID', 'header-cell-accessTravels', 'header-cell-accessFuelTrans',
+  'header-cell-accessDiagnostic', 'header-cell-accessFuelDown', 'header-cell-checkFuelDown', 'header-cell-token',
+  'body-cell-status', 'body-cell-onecCode', 'body-cell-bitrixID', 'body-cell-accessTravels', 'body-cell-accessFuelTrans',
+  'body-cell-accessDiagnostic', 'body-cell-accessFuelDown', 'body-cell-checkFuelDown', 'body-cell-token', 'body-cell-session', 'body-cell-story'];
+
+const tableHeadSlots = [
+  {
+    cellName: 'bitrixID',
+    iconPath: 'img:icons/bitrix24.png',
+    tooltipText: 'Bitrix ID',
+  },
+  {
+    cellName: 'accessTravels',
+    iconPath: 'fact_check',
+    tooltipText: 'Доступ к Путевым',
+    color: 'blue-grey-7',
+  },
+  {
+    cellName: 'accessFuelTrans',
+    iconPath: 'local_gas_station',
+    tooltipText: 'Доступ к Транзакциям',
+    color: 'blue-grey-7',
+  },
+  {
+    cellName: 'accessDiagnostic',
+    iconPath: 'car_crash',
+    tooltipText: 'Доступ к Диагностике',
+    color: 'blue-grey-7',
+  },
+  {
+    cellName: 'accessFuelDown',
+    iconPath: 'mdi-fuel',
+    tooltipText: 'Доступ к Сливам',
+    color: 'blue-grey-7',
+  },
+  {
+    cellName: 'checkFuelDown',
+    iconPath: 'mdi-file-chart-check-outline',
+    tooltipText: 'Проверка сливов',
+    color: 'blue-grey-7',
+  },
+  {
+    cellName: 'token',
+    iconPath: 'img:icons/wialon.png',
+    tooltipText: 'Token Wialon',
+    color: 'blue-grey-7',
+  },
+];
+
+const tableBodySlots = [
+  { cellName: 'status', field: 'status_smt', tooltipText: 'Заблокирована' },
+  { cellName: 'onecCode', field: 'one_c_code', tooltipText: 'Код 1С не указан' },
+  { cellName: 'bitrixID', field: 'bitrix_id', tooltipText: 'Bitrix ID не указан' },
+  { cellName: 'checkFuelDown', field: 'check_fd', tooltipText: 'Отключена проверка сливов' },
+  { cellName: 'token', field: 'company_token', tooltipText: 'Token Wialon не указан' },
+  { cellName: 'session', field: 'wialon_session', tooltipText: 'Сессия не активна' },
+];
+
+const tableBodyModuleSlots = [
+  { cellName: 'accessTravels', field: 'travel_acc' },
+  { cellName: 'accessFuelTrans', field: 'trans_acc' },
+  { cellName: 'accessDiagnostic', field: 'diagn_acc' },
+  { cellName: 'accessFuelDown', field: 'fd_acc' },
+];
+
+const companyHistoryTableHead = [
+  {
+    name: 'company',
+    label: 'Компания',
+    field: 'comp',
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 20%',
+  },
+  {
+    name: 'date',
+    label: 'Дата',
+    field: 'date',
+    format: (val) => `${date.formatDate(val, 'DD.MM.YYYY')}`,
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 10%',
+  },
+  {
+    name: 'author',
+    label: 'Пользователь',
+    field: 'author',
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 20%',
+  },
+  {
+    name: 'eventDescr',
+    label: 'Событие',
+    field: 'text',
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 40%',
+  },
+];
+
+export default {
+  companyTableHead,
+  slotsList,
+  tableHeadSlots,
+  tableBodySlots,
+  tableBodyModuleSlots,
+  companyHistoryTableHead,
+};

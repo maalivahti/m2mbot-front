@@ -1,0 +1,71 @@
+.q-btn {
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.q-radio__label {
+  color: var(--color-shark);
+}
+
+.main-table__icon-btn {
+  padding: 0;
+  width: 34px;
+  height: 34px;
+}
+
+.base-modal {
+  .q-field__control-container {
+    padding-top: 0 !important;
+  }
+
+  .q-field--dense {
+    .q-field__control, .q-field__marginal {
+      height: 30px;
+    }
+  }
+
+  .q-field--auto-height.q-field--dense .q-field__control {
+    min-height: 30px;
+  }
+
+  .q-field--dense .q-field__label {
+    top: 8px;
+    font-size: 12px;
+  }
+}
+
+.table__col-wrap {
+  white-space: normal !important;
+}
+
+.table__col-reduct {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+.hover-bold {
+  &:hover {
+    font-weight: 700;
+    transition: font-weight .15s ease;
+  }
+}
+
+.sticky {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+.no-row-hover {
+  tr:hover {
+    cursor: default !important;
+    td:before {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.q-drawer {
+  z-index: 100000;
+}

@@ -1,0 +1,12 @@
+@import "vendors";
+
+// app global css in SCSS form
+@import "vars";
+@import "mixin";
+
+@import "settings";
+@import "components/sections";
+@import "components/form";
+@import "components/tables";
+
+@import "commons";

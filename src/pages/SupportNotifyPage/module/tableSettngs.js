@@ -1,0 +1,65 @@
+const notifTableHead = [
+  {
+    name: 'creator',
+    label: 'Создатель',
+    field: 'creator',
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 11%',
+  },
+  {
+    name: 'name',
+    label: 'Название',
+    field: 'name',
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 23%',
+  },
+  {
+    name: 'eventType',
+    label: 'Тип события',
+    field: 'event_display',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 10%',
+  },
+  {
+    name: 'sendingType',
+    label: 'Вид отправки',
+    field: 'type_notif_display',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 8%',
+  },
+  {
+    name: 'address',
+    label: 'ID/Email',
+    field: (row) => (row.type_notif_display === 'Telegram' ? row.telegram_id : row.email),
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 15%',
+  },
+  {
+    name: 'notifyType',
+    label: 'Тип уведомления',
+    field: 'type_object_display',
+    align: 'center',
+    sortable: true,
+    headerStyle: 'width: 11%',
+  },
+  {
+    name: 'object',
+    label: 'Компания/Объект',
+    field: (row) => (row.type_object_display === 'По объекту' ? row.object_name : row.company_name),
+    align: 'left',
+    sortable: true,
+    headerStyle: 'width: 20%',
+  },
+  {
+    name: 'button',
+    align: 'center',
+    headerStyle: 'width: 7%',
+  },
+];
+
+export default { notifTableHead };

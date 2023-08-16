@@ -1,0 +1,213 @@
+@import "vendors/normalize.css";
+:root {
+  --color-light: #fff;
+  --color-french: #b3e5fc;
+  --color-malibu: #64b5f6;
+  --color-primary: #1976d2;
+  --color-curious: #1e88e5;
+  --color-indigo: #284669;
+  --color-thunderbird: #b71c1c;
+  --color-fruit: #4caf50;
+  --color-yellow: #fbc02d;
+  --color-mango: #ff6d00;
+  --color-shark: #546e7a;
+  --color-alabaster: #424242;
+  --color-shaft: #212121;
+  --color-black: #1d1d1d;
+  --color-separation: rgba(0, 0, 0, .24);
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("../app/assets/fonts/SFProDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFPro";
+  src: url("../app/assets/fonts/SFProDisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFPro";
+  src: url("../app/assets/fonts/SFProDisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+html {
+  box-sizing: border-box;
+  font-family: "SFPro", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: 0;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.invisible {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1260px;
+}
+
+.site-wrapper {
+  overflow: hidden;
+}
+
+.valid-form .q-field--with-bottom {
+  padding-bottom: 4px;
+}
+.valid-form .q-field__bottom {
+  padding-top: 1px;
+}
+
+.main-table .q-table__top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-light);
+}
+
+.q-btn {
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.q-radio__label {
+  color: var(--color-shark);
+}
+
+.main-table__icon-btn {
+  padding: 0;
+  width: 34px;
+  height: 34px;
+}
+
+.base-modal .q-field__control-container {
+  padding-top: 0 !important;
+}
+.base-modal .q-field--dense .q-field__control, .base-modal .q-field--dense .q-field__marginal {
+  height: 30px;
+}
+.base-modal .q-field--auto-height.q-field--dense .q-field__control {
+  min-height: 30px;
+}
+.base-modal .q-field--dense .q-field__label {
+  top: 8px;
+  font-size: 12px;
+}
+
+.table__col-wrap {
+  white-space: normal !important;
+}
+
+.table__col-reduct {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+.hover-bold:hover {
+  font-weight: 700;
+  transition: font-weight 0.15s ease;
+}
+
+.sticky {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+.no-row-hover tr:hover {
+  cursor: default !important;
+}
+.no-row-hover tr:hover td:before {
+  background-color: transparent !important;
+}
+
+.q-drawer {
+  z-index: 100000;
+}
+
+/*# sourceMappingURL=app.css.map */

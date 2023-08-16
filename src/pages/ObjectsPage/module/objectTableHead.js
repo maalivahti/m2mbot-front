@@ -1,0 +1,110 @@
+import { date } from 'quasar';
+
+const botObjectTableHead = [
+  {
+    name: 'objectName',
+    required: true,
+    label: 'Название ТС',
+    align: 'left',
+    field: 'name',
+    format: (val) => `${val}`,
+    sortable: true,
+    headerStyle: 'width: 28%',
+  },
+  {
+    name: 'regNumber',
+    align: 'center',
+    label: 'Гос. номер',
+    field: 'gos_number',
+    sortable: true,
+    headerStyle: 'width: 11%',
+  },
+  {
+    name: 'lastMsg',
+    align: 'center',
+    label: 'Последнее сообщение',
+    field: 'last_update',
+    format: (val) => `${date.formatDate(val, 'DD.MM.YYYY HH:mm')}`,
+    sortable: true,
+    headerStyle: 'width: 13%',
+  },
+  {
+    name: 'tankVal',
+    align: 'center',
+    label: 'Объем бака, л',
+    field: 'fuel_tank',
+    sortable: true,
+    headerStyle: 'width: 9%',
+  },
+  {
+    name: 'errorAllow',
+    align: 'center',
+    label: 'Допустимая погрешность, %',
+    field: 'perms_fault',
+    headerClasses: 'table__col-wrap',
+    headerStyle: 'width: 8%',
+  },
+  {
+    name: 'company',
+    align: 'left',
+    label: 'Компания',
+    field: 'owner',
+    sortable: true,
+    headerStyle: 'width: 26%',
+  },
+  {
+    name: 'button',
+    align: 'center',
+    label: 'История',
+    headerStyle: 'width: 5%',
+  },
+];
+
+const wialonObjectTableHead = [
+  {
+    name: 'objectName',
+    required: true,
+    label: 'Название ТС',
+    align: 'left',
+    field: 'object_name',
+    format: (val) => `${val}`,
+    sortable: true,
+  },
+  {
+    name: 'lastMsg',
+    align: 'center',
+    label: 'Дата обновления',
+    field: 'update_date',
+    format: (val) => `${date.formatDate(val, 'DD.MM.YYYY HH:mm')}`,
+    sortable: true,
+  },
+  {
+    name: 'terminalModel',
+    required: true,
+    label: 'Модель терминала',
+    align: 'left',
+    field: 'hw_name',
+    format: (val) => `${val}`,
+    sortable: true,
+  },
+  {
+    name: 'terminalModel',
+    required: false,
+    label: 'ID терминала',
+    align: 'left',
+    field: 'id_at',
+    format: (val) => `${val}`,
+    sortable: true,
+  },
+  {
+    name: 'wialonAccName',
+    required: false,
+    label: 'Учетная запись',
+    align: 'left',
+    field: 'account',
+    format: (val) => `${val}`,
+    sortable: true,
+  },
+];
+
+export default { botObjectTableHead, wialonObjectTableHead };
